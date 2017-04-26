@@ -91,6 +91,7 @@ class ProjectPolicy < BasePolicy
   end
 
   def master_access!
+    can! :create_branch
     can! :push_code_to_protected_branches
     can! :update_project_snippet
     can! :update_environment

@@ -15,6 +15,10 @@ class CreateBranchService < BaseService
       return error('Branch already exists')
     end
 
+    unless current_user.can?(:create_branch, project)
+      return error('You cant create new branch', 405)
+    end
+
     new_branch = if source_project != @project
                    repository.fetch_ref(
                      source_project.repository.path_to_repo,

@@ -92,7 +92,6 @@ class ProjectPolicy < BasePolicy
 
   def master_access!
     can! :push_tag
-    can! :delete_tag
     can! :create_branch
     can! :push_code_to_protected_branches
     can! :update_project_snippet

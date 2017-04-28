@@ -9,6 +9,10 @@ class DeleteTagService < BaseService
       return error('No such tag', 404)
     end
 
+    unless current_user.can?(:delete_tag, project)
+      return error('You dont have delete tag access to repo', 405)
+    end
+
     if repository.rm_tag(tag_name)
       release = project.releases.find_by(tag: tag_name)
       release.destroy if release

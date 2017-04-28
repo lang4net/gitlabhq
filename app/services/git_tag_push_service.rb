@@ -5,6 +5,10 @@ class GitTagPushService < BaseService
     project.repository.after_create if project.empty_repo?
     project.repository.before_push_tag
 
+    unless current_user.can?(:push_tag, project)
+      return error('You dont have push tag access to repo', 405)
+    end
+
     @push_data = build_push_data
 
     EventCreateService.new.push(project, current_user, @push_data)

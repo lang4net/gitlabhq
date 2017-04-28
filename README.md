@@ -1,3 +1,9 @@
+# Gitower
+ - 增加create_branch权限，仅master/ower可以创建新分支
+ -
+ -
+
+
 # GitLab
 
 [![build status](https://gitlab.com/gitlab-org/gitlab-ce/badges/master/build.svg)](https://gitlab.com/gitlab-org/gitlab-ce/commits/master)

@@ -1,6 +1,5 @@
 # Gitower
- - 增加create_branch权限，仅master/ower可以创建新分支
- -
+ - 增加create_branch权限，仅master/owner可以创建新分支
  -
 
 
